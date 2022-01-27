@@ -1,13 +1,13 @@
 // Prefabs
-const sites = {
+var sites = {
     "rickroll": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "winner": "",
-    "recursive": "/",
+    "recursive": "RandomLink.html",
     "comeback": "https://www.facebook.com/LPECpage"
 };
 const range = 5000;
-const prize = ["winner","rickroll","recursive","comeback"]
-const prizeRange = {
+var prize = ["winner","rickroll","recursive","comeback"]
+var prizeRange = {
     "rickroll": 0,
     "winner": 1410,
     "recursive": 2500,
@@ -17,9 +17,10 @@ const prizeRange = {
 //looting machine
 function RandomSite() {
     var ranNumber = Math.random()*range + 1;
-    // Detect prize whether the winner number showed or not
-    var index = (ranNumber > prizeRange[rickroll]) + (ranNumber > prizeRange[recursive]) + (ranNumber > prizeRange[comeback]);
-    index = index * (ranNumber != prizeRange[winner]); // Check winner
+    // Detect prize whether the "winner" number showed or not
+    var index = (ranNumber > prizeRange["rickroll"]) + (ranNumber > prizeRange["recursive"]) + (ranNumber > prizeRange["comeback"]);
+    index = index * (ranNumber != prizeRange["winner"]); // Check "winner"
+    console.log(index);
     location.href = sites[prize[index]]
 }
 
