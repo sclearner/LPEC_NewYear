@@ -1,8 +1,8 @@
 // Prefabs
 var sites = {
     "rickroll": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "winner": "",
-    "recursive": "RandomLink.html",
+    "winner": "prizes/winner.html",
+    "recursive": "404.html",
     "comeback": "https://www.facebook.com/LPECpage"
 };
 const range = 5000;
@@ -20,7 +20,7 @@ function checkPrize(number, prizes) {
     for (var prize in prizes) {
         if (prize != "winner") result += (number > prizes[prize]);
     }
-    return result;
+    return result * (number != prizes["winner"]); // Check "winner"
 }
 
 //looting machine
@@ -28,7 +28,6 @@ function RandomSite() {
     var ranNumber = Math.random()*range + 1;
     // Detect prize whether the "winner" number showed or not
     var index = checkPrize(ranNumber, prizeRange);
-    index = index * (ranNumber != prizeRange["winner"]); // Check "winner"
     location.href = sites[prize[index]]
 }
 
