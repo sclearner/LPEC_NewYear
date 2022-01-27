@@ -14,6 +14,7 @@ var prizeRange = {
     "comeback": 4500
 }
 
+//Check prizes
 function checkPrize(number, prizes) {
     var result = 0;
     for (var prize in prizes) {
