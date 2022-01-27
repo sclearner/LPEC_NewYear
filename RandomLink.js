@@ -7,7 +7,7 @@ var sites = [
     'http://facebook.com'
 ];
 
-function randomSite() {
+function RandomSite() {
     var i = Math.floor(Math.random()*5000)+1
     if(i == 1410){
         var index = 0
