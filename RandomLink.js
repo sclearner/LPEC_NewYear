@@ -14,11 +14,19 @@ var prizeRange = {
     "comeback": 4500
 }
 
+function checkPrize(number, prizes) {
+    var result = 0;
+    for (var prize in prizes) {
+        if (prize != "winner") result += (number > prizes[prize]);
+    }
+    return result;
+}
+
 //looting machine
 function RandomSite() {
     var ranNumber = Math.random()*range + 1;
     // Detect prize whether the "winner" number showed or not
-    var index = (ranNumber > prizeRange["rickroll"]) + (ranNumber > prizeRange["recursive"]) + (ranNumber > prizeRange["comeback"]);
+    var index = checkPrize(ranNumber, prizeRange);
     index = index * (ranNumber != prizeRange["winner"]); // Check "winner"
     console.log(index);
     location.href = sites[prize[index]]
