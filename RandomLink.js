@@ -29,7 +29,6 @@ function RandomSite() {
     // Detect prize whether the "winner" number showed or not
     var index = checkPrize(ranNumber, prizeRange);
     index = index * (ranNumber != prizeRange["winner"]); // Check "winner"
-    console.log(index);
     location.href = sites[prize[index]]
 }
 
