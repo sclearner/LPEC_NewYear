@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.background {
+    width: 1280;
+    height: 10%;
+}
+
+.button {
+    position: absolute;
+    bottom: 25vh;
+    right: 25vw;
+}
